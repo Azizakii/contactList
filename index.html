@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="wrapper__title">Contact List on JS</h1>
+        <a href="https://github.com/Azizakii/contactList"  class="wrapper__link" target="_blank">GitHub Repository link</a>
+
+        <form class="contact-form">
+            <input type="text" class="contact-form__input js-form-name" placeholder="Name" name="Name">
+            <input type="text" class="contact-form__input js-form-vacancy" placeholder="Vacancy" name="Vacancy">
+            <input type="text" class="contact-form__input js-form-number" placeholder="+1234567890" name="Number">
+
+            <button type="button" class="contact-form__button js-button-add" value="Add">Add</button>
+            <button type="button" class="contact-form__button js-button-clear" value="Clear List">Clear</button>
+            <button type="button" class="contact-form__button js-button-search" value="Search">Search</button>
+        </form>
+
+        <div class="errorMessage js-errorMessage"></div>
+
+        <div class="contact-list">
+            <div class="contact-list-column">
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="a" class="element__letter js-element-letter">A</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="b" class="element__letter js-element-letter">B</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="c" class="element__letter js-element-letter">C</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="d" class="element__letter js-element-letter">D</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="e" class="element__letter js-element-letter">E</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="f" class="element__letter js-element-letter">F</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="g" class="element__letter js-element-letter">G</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="h" class="element__letter js-element-letter">H</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="i" class="element__letter js-element-letter">I</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="j" class="element__letter js-element-letter">J</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="k" class="element__letter js-element-letter">K</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="l" class="element__letter js-element-letter">L</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="m" class="element__letter js-element-letter">M</div>
+                </div>
+            </div>
+        
+            <div class="contact-list-column">
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="n" class="element__letter js-element-letter">N</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="o" class="element__letter js-element-letter">O</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="p" class="element__letter js-element-letter">P</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="q" class="element__letter js-element-letter">Q</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="r" class="element__letter js-element-letter">R</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="s" class="element__letter js-element-letter">S</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="t" class="element__letter js-element-letter">T</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="u" class="element__letter js-element-letter">U</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="v" class="element__letter js-element-letter">V</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="w" class="element__letter js-element-letter">W</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="x" class="element__letter js-element-letter">X</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="y" class="element__letter js-element-letter">Y</div>
+                </div>
+                <div class="contact-list__letter js-contact-list__letter">
+                    <div data-letter="z" class="element__letter js-element-letter">Z</div>
+                </div>
+            </div>
+        </div>
+          
+    <div class="search-popup js-search-popup">
+        <div class="search-popup__container">
+            <h2 class="search-popup__title">Search contact</h2>
+
+            <input type="text" class="search-popup__input js-search-popup__input" placeholder="Search...">
+            <div class="search-popup__output js-search-popup__output"></div>
+
+            <button class="search-popup__showAllBtn
+            js-search-popup__showAllBtn">Show all</button>
+            <button type="button" class="search-popup__closeBtn js-search-popup__closeBtn">x</button>
+        </div>
+    </div>
+
+    <div class="edit-popup js-edit-popup">
+        <div class="edit-popup__container">
+            <h2 class="edit-popup__title">Edit</h2>
+            <input type="text" class="edit-popup__name js-edit-popup__name">
+            <input type="text" class="edit-popup__vacancy js-edit-popup__vacancy">
+            <input type="text" class="edit-popup__number js-edit-popup__number">
+
+            <button type="button" class="edit-popup__editBtn js-edit-popup__editBtn">Edit</button>
+
+            <button type="button" class="edit-popup__closeBtn  js-edit-popup__closeBtn">x</button>
+        </div>
+    </div>
+
+
+
+    <script src="/script/main.js"></script>
+</body>
+</html>

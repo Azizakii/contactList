@@ -1,0 +1,319 @@
+@use "reset.scss";
+
+$font-main: "IBM Plex Mono";
+
+body {
+    background-color: rgb(188, 188, 238);
+}
+
+.wrapper {
+    max-width: 70.625rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4rem;
+
+    &__title {
+        margin: 1.5625rem auto 0.625rem;
+        text-align: center;
+    }
+
+    &__link {
+        display: inline-block;
+        margin-bottom: 1.5625rem;
+        font-size: 1.1875rem;
+        text-decoration: none;
+        color: black;
+        border-bottom: 2px solid transparent; 
+        transition: .2s;
+
+        &:hover {
+            border-color: black;
+        }
+    }
+}
+
+
+.contact-form {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.7rem;
+    margin-bottom: 3.5rem;
+
+    &__input {
+        width: 280px;
+        font-family: $font-main;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 1rem 0.7rem 0.3rem 0.4rem;
+        border: 2px solid black;
+        border-radius: 6px;
+    }
+
+    &__button {
+        cursor: pointer;
+        margin-top: 10px;
+        height: auto;
+        border: 2px solid rgb(127, 14, 14);
+        border-radius: 8px;
+        padding: 0.3rem 1rem;
+
+        &:hover {
+            border-color: rgb(13, 127, 13);
+        }
+    }
+}
+
+.errorMessage {
+    display: none;
+    position: absolute;
+    left: 47.5%;
+    top: 11.3rem;;
+    border: 2px solid red;
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: #dc7171;
+}
+
+.contact-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    &__counter {
+        padding-left: 11.4rem;
+    }
+
+    &-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__letter {
+        border: 2px solid rgb(202, 39, 72);
+        border-bottom: none;
+        min-width: 15rem;
+        min-height: 2.5rem;
+        text-align: start;
+        font-size:  20px;
+        padding-top: 5px;
+        background-color: #f2d9d9;
+
+        &:last-child {
+            border-bottom: 2px solid rgb(202, 39, 72);
+        }
+    }
+
+    & .element__letter {
+        padding-left: 15px;
+        min-height: 2rem;
+    }
+
+    & .letter__info {
+        margin: 0;
+        padding: 10px;
+        background: #f5f5f5;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        padding: 0;
+    }
+
+    & .contact-item {
+        border-top: 1.5px solid grey;
+        border-bottom: 1.5px solid grey;
+        font-size: 15px;
+        padding: 5px;
+        position: relative;
+    }
+
+    & .contact-item:last-child {
+        border-bottom: none;
+    }
+
+    & .deleteContactButton {
+        cursor: pointer;
+        position: absolute;
+        top: 1.2rem;
+        right: 0.3rem;
+        background-color: inherit;
+        font-size: 19px;
+        font-stretch: 115%;
+    }
+}
+
+
+.search-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none; 
+    opacity: 0; 
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    &__container {
+        border: 2px solid black;
+        border-radius: 8px;
+        width: 50%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 25px;
+        position: relative;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 1.7rem;
+        font-size: 28px;
+    }
+
+    &__input {
+        border: 2px solid rgb(123, 118, 118);
+        width: 100%;
+        padding: 9px;
+
+        &:focus {
+            border-color: #4a90e2;
+        }
+    }
+
+    &__output {
+        margin-top: 1.2rem;
+        height: 300px;
+        overflow-y: auto;
+        border: 1px solid grey;
+        padding: 10px;
+        margin-bottom: 1.2rem;
+    }
+
+    &__showAllBtn {
+        display: block;
+        border: 2px solid green;
+        border-radius: 8px;
+        margin: 0 auto;
+        padding: 5px 25px;
+
+        &:hover {
+            background-color: rgb(101, 199, 101);
+        }
+    }
+
+
+    &__closeBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: inherit;
+        font-size: 24px;
+        font-weight: 700;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    & .output-contact {
+        border: 1px solid black;
+        position: relative;
+        text-align: left;
+        padding: 6px;
+        background-color: #fce8e8;
+
+        & .js-editContact {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            cursor: pointer;
+            border-radius: 6px;
+            border: 1.5px solid black;
+
+            &:hover {
+                background-color: red;
+                color: #fff;
+            }
+        }
+
+        & .js-deleteContact{
+            position: absolute;
+            top: 25px;
+            right: 15px;
+            cursor: pointer;
+            border-radius: 6px;
+            border: 1.5px solid black;
+
+            &:hover {
+                background-color: red;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+.edit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    &__container {
+        background-color: #fff;
+        border-radius: 8px;
+        width: 50%;
+        max-width: 350px;
+        background-color: #fff;
+        padding: 18px;
+        position: relative;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    & input {
+        margin-top: 10px;
+        width: 100%;
+        border: 1px solid black;
+        padding: 5px 8px;
+        border-radius: 6px;
+    }
+
+    &__editBtn {
+        display: block;
+        margin: 15px auto 0;
+        background-color: inherit;
+        border: 2px solid green;
+        border-radius: 8px;
+        padding: 6px 20px;
+
+    }
+
+    &__closeBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: inherit;
+        font-size: 23px;
+        cursor: pointer;
+    }
+}
